@@ -1,0 +1,14 @@
+c:\users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\bin\Debug\Quantum Gate.exe.config
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\bin\Debug\Quantum Gate.exe
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\bin\Debug\Quantum Gate.pdb
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\Quantum Gate.csprojResolveAssemblyReference.cache
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\Quantum_Gate.Form1.resources
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\Quantum_Gate.Properties.Resources.resources
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\Quantum Gate.csproj.GenerateResource.Cache
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\Quantum Gate.exe
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\Quantum Gate.pdb
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\Interop.AXVLC.dll
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\Quantum Gate.csproj.ResolveComReference.cache
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\bin\Debug\Interop.AXVLC.dll
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\bin\Debug\AxInterop.AXVLC.dll
+C:\Users\guardian\documents\visual studio 2015\Projects\Quantum Gate\Quantum Gate\obj\Debug\AxInterop.AXVLC.dll
