@@ -37,7 +37,7 @@ namespace Quantum_Gate.Game_Objects
                 RoomExit northExit = new RoomExit("north", "enlistedQtrs", "N3C_2C", basePath, "north");
                 exitList.Add(northExit);
 
-                Room drewQtrs = new Room(imageList, movieList, exitList, basePath);
+                Room drewQtrs = new Room(imageList, movieList, exitList, basePath, "Drew's Quarters");
 
                 return drewQtrs;
             }
@@ -64,7 +64,7 @@ namespace Quantum_Gate.Game_Objects
                 RoomExit northExit = new RoomExit("east", "drewQtrs", "N2B_3A", basePath, "south");
                 exitList.Add(northExit);
 
-                Room enlistedQtrs = new Room(imageList, movieList, exitList, basePath);
+                Room enlistedQtrs = new Room(imageList, movieList, exitList, basePath, "Corporate Quarters");
 
                 return enlistedQtrs;
             }

@@ -23,11 +23,12 @@ namespace Quantum_Gate.Game_Objects
         private string southToEastMov;
         private string eastToNorthMov;
 
-        private string startingDirection;
+        private string friendlyName;
+
 
         public List<RoomExit> roomExits = new List<RoomExit>();
 
-        public Room(List<String> imageList, List<String> movieList, List<RoomExit> roomExits, String basePath)
+        public Room(List<String> imageList, List<String> movieList, List<RoomExit> roomExits, String basePath, string friendlyName)
         {
             northImage = basePath + imageList[0] + ".png";
             eastImage  = basePath + imageList[1] + ".png";
@@ -45,6 +46,7 @@ namespace Quantum_Gate.Game_Objects
             eastToNorthMov = basePath + movieList[7] + ".mov";
 
             this.roomExits = roomExits;
+            this.friendlyName = friendlyName;
         }
 
         public string getCurrentImage(string direction)
