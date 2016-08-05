@@ -30,12 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.imagePortal1 = new System.Windows.Forms.PictureBox();
-            this.leftButton = new System.Windows.Forms.Button();
-            this.rightButton = new System.Windows.Forms.Button();
             this.mainVidPlayer = new AxAXVLC.AxVLCPlugin2();
-            this.upButton = new System.Windows.Forms.Button();
+            this.forwardsHotSpot = new System.Windows.Forms.PictureBox();
+            this.rightHotSpot = new System.Windows.Forms.PictureBox();
+            this.leftHotSpot = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imagePortal1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainVidPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forwardsHotSpot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightHotSpot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftHotSpot)).BeginInit();
             this.SuspendLayout();
             // 
             // imagePortal1
@@ -49,29 +52,6 @@
             this.imagePortal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imagePortal1.TabIndex = 0;
             this.imagePortal1.TabStop = false;
-            // 
-            // leftButton
-            // 
-            this.leftButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.leftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.leftButton.Location = new System.Drawing.Point(12, 406);
-            this.leftButton.Name = "leftButton";
-            this.leftButton.Size = new System.Drawing.Size(75, 23);
-            this.leftButton.TabIndex = 1;
-            this.leftButton.Text = "◀";
-            this.leftButton.UseVisualStyleBackColor = true;
-            this.leftButton.Click += new System.EventHandler(this.leftButton_Click);
-            // 
-            // rightButton
-            // 
-            this.rightButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.rightButton.Location = new System.Drawing.Point(1097, 406);
-            this.rightButton.Name = "rightButton";
-            this.rightButton.Size = new System.Drawing.Size(75, 23);
-            this.rightButton.TabIndex = 2;
-            this.rightButton.Text = "▶";
-            this.rightButton.UseVisualStyleBackColor = true;
-            this.rightButton.Click += new System.EventHandler(this.rightButton_Click);
             // 
             // mainVidPlayer
             // 
@@ -87,17 +67,45 @@
             this.mainVidPlayer.MediaPlayerPlaying += new System.EventHandler(this.mainVidPlayer_MediaPlayerPlaying);
             this.mainVidPlayer.MediaPlayerEndReached += new System.EventHandler(this.mainVidPlayer_MediaPlayerEndReached);
             // 
-            // upButton
+            // forwardsHotSpot
             // 
-            this.upButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.forwardsHotSpot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.upButton.Location = new System.Drawing.Point(559, 12);
-            this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(75, 23);
-            this.upButton.TabIndex = 4;
-            this.upButton.Text = "▲";
-            this.upButton.UseVisualStyleBackColor = true;
-            this.upButton.Click += new System.EventHandler(this.upButton_Click);
+            this.forwardsHotSpot.BackColor = System.Drawing.Color.Lime;
+            this.forwardsHotSpot.Cursor = System.Windows.Forms.Cursors.PanNorth;
+            this.forwardsHotSpot.Location = new System.Drawing.Point(461, 112);
+            this.forwardsHotSpot.Name = "forwardsHotSpot";
+            this.forwardsHotSpot.Size = new System.Drawing.Size(280, 208);
+            this.forwardsHotSpot.TabIndex = 5;
+            this.forwardsHotSpot.TabStop = false;
+            this.forwardsHotSpot.Click += new System.EventHandler(this.forwardsHotSpot_Click);
+            // 
+            // rightHotSpot
+            // 
+            this.rightHotSpot.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rightHotSpot.BackColor = System.Drawing.Color.Lime;
+            this.rightHotSpot.Cursor = System.Windows.Forms.Cursors.PanEast;
+            this.rightHotSpot.Location = new System.Drawing.Point(1022, 12);
+            this.rightHotSpot.Name = "rightHotSpot";
+            this.rightHotSpot.Size = new System.Drawing.Size(150, 417);
+            this.rightHotSpot.TabIndex = 6;
+            this.rightHotSpot.TabStop = false;
+            this.rightHotSpot.Click += new System.EventHandler(this.rightHotSpot_Click);
+            // 
+            // leftHotSpot
+            // 
+            this.leftHotSpot.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.leftHotSpot.BackColor = System.Drawing.Color.Lime;
+            this.leftHotSpot.Cursor = System.Windows.Forms.Cursors.PanWest;
+            this.leftHotSpot.Location = new System.Drawing.Point(12, 12);
+            this.leftHotSpot.Name = "leftHotSpot";
+            this.leftHotSpot.Size = new System.Drawing.Size(150, 417);
+            this.leftHotSpot.TabIndex = 7;
+            this.leftHotSpot.TabStop = false;
+            this.leftHotSpot.Click += new System.EventHandler(this.leftHotSpot_Click);
             // 
             // Form1
             // 
@@ -105,15 +113,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1184, 441);
-            this.Controls.Add(this.upButton);
+            this.Controls.Add(this.leftHotSpot);
+            this.Controls.Add(this.rightHotSpot);
+            this.Controls.Add(this.forwardsHotSpot);
             this.Controls.Add(this.mainVidPlayer);
-            this.Controls.Add(this.rightButton);
-            this.Controls.Add(this.leftButton);
             this.Controls.Add(this.imagePortal1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Quantum Gate v0.0.1";
             ((System.ComponentModel.ISupportInitialize)(this.imagePortal1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainVidPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forwardsHotSpot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightHotSpot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftHotSpot)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,10 +133,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox imagePortal1;
-        private System.Windows.Forms.Button leftButton;
-        private System.Windows.Forms.Button rightButton;
         private AxAXVLC.AxVLCPlugin2 mainVidPlayer;
-        private System.Windows.Forms.Button upButton;
+        private System.Windows.Forms.PictureBox forwardsHotSpot;
+        private System.Windows.Forms.PictureBox rightHotSpot;
+        private System.Windows.Forms.PictureBox leftHotSpot;
     }
 }
 

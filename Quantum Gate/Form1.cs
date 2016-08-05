@@ -24,26 +24,15 @@ namespace Quantum_Gate
 
         public void startGame()
         {
+            leftHotSpot.Parent = imagePortal1;
+            rightHotSpot.Parent = imagePortal1;
+            forwardsHotSpot.Parent = imagePortal1;
+            leftHotSpot.BackColor = Color.Transparent;
+            rightHotSpot.BackColor = Color.Transparent;
+            forwardsHotSpot.BackColor = Color.Transparent;
+            forwardsHotSpot.Visible = false;
             mainVidPlayer.Visible = false;
             player = new Game_Objects.Player("west", deck2.buildRoom("drewQtrs"), 5, 1, 0);
-            upButton.Visible = false;
-            refreshView();
-        }
-
-        private void leftButton_Click(object sender, EventArgs e)
-        {
-            //put a story check in here, once the story class is written
-            upButton.Visible = false;
-            playLeftMovie();
-            player.rotate("left");
-            refreshView();
-        }
-
-        private void rightButton_Click(object sender, EventArgs e)
-        {
-            upButton.Visible = false;
-            playRightMovie();
-            player.rotate("right");
             refreshView();
         }
 
@@ -82,6 +71,7 @@ namespace Quantum_Gate
 
         private void refreshView()
         {
+            System.Threading.Thread.Sleep(20); //stops the new image appearing breifly before the move movie plays
             imagePortal1.ImageLocation = player.getCurrentImagePath();
             //this.Text = player.currentDirection;
         }
@@ -96,12 +86,29 @@ namespace Quantum_Gate
         {
             mainVidPlayer.Visible = false;
             imagePortal1.Visible = true;
-            upButton.Visible = player.doesCurrentViewHaveExit();
+            forwardsHotSpot.Visible = player.doesCurrentViewHaveExit();
         }
 
-        private void upButton_Click(object sender, EventArgs e)
+        private void rightHotSpot_Click(object sender, EventArgs e)
         {
-            upButton.Visible = false;
+            forwardsHotSpot.Visible = false;
+            playRightMovie();
+            player.rotate("right");
+            refreshView();
+        }
+
+        private void leftHotSpot_Click(object sender, EventArgs e)
+        {
+            //put a story check in here, once the story class is written
+            forwardsHotSpot.Visible = false;
+            playLeftMovie();
+            player.rotate("left");
+            refreshView();
+        }
+
+        private void forwardsHotSpot_Click(object sender, EventArgs e)
+        {
+            forwardsHotSpot.Visible = false;
             playUpMovie();
             player.walk();
             refreshView();

@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>2016-08-06 08_04_52-ICMAPP.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -86,6 +89,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2016-08-06 08_04_52-ICMAPP.ico" />
     <Content Include="Content\drewqtrs\N3A.png" />
     <Content Include="Content\drewqtrs\N3A_3B.MOV" />
     <Content Include="Content\drewqtrs\N3A_3D.MOV" />
