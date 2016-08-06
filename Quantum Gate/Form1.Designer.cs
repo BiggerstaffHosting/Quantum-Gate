@@ -66,6 +66,7 @@
             this.mainVidPlayer.TabIndex = 3;
             this.mainVidPlayer.MediaPlayerPlaying += new System.EventHandler(this.mainVidPlayer_MediaPlayerPlaying);
             this.mainVidPlayer.MediaPlayerEndReached += new System.EventHandler(this.mainVidPlayer_MediaPlayerEndReached);
+            this.mainVidPlayer.Enter += new System.EventHandler(this.mainVidPlayer_Enter);
             // 
             // forwardsHotSpot
             // 
@@ -118,9 +119,11 @@
             this.Controls.Add(this.forwardsHotSpot);
             this.Controls.Add(this.mainVidPlayer);
             this.Controls.Add(this.imagePortal1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Quantum Gate v0.0.1";
+            this.Click += new System.EventHandler(this.Form1_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imagePortal1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainVidPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.forwardsHotSpot)).EndInit();

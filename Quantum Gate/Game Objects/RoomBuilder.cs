@@ -61,10 +61,68 @@ namespace Quantum_Gate.Game_Objects
 
                 String basePath = (@".\content\drewqtrs\");
 
-                RoomExit northExit = new RoomExit("east", "drewQtrs", "N2B_3A", basePath, "south");
-                exitList.Add(northExit);
+                RoomExit exit1 = new RoomExit("east", "drewQtrs", "N2B_3A", basePath, "south");
+                RoomExit exit2 = new RoomExit("north", "deck2area1", "N2C_1", basePath, "north");
+                exitList.Add(exit1);
+                exitList.Add(exit2);
 
                 Room enlistedQtrs = new Room(imageList, movieList, exitList, basePath, "Corporate Quarters");
+
+                return enlistedQtrs;
+            }
+
+            if (roomName == "deck2area1") //Enlisted Men's quarters corridor
+            {
+                imageList.Add("NSI1"); //north
+                imageList.Add("NHW1"); //east
+                imageList.Add("NSO1"); //south
+                imageList.Add("NHE1"); //west
+
+                movieList.Add("NSIHW"); //north to east
+                movieList.Add("NHWSO"); //east to south
+                movieList.Add("NSOHE"); //south to west
+                movieList.Add("NHESI"); //west to north
+
+                movieList.Add("NSIHE"); //north to west
+                movieList.Add("NHESO"); //west to south
+                movieList.Add("NSOHW"); //south to east
+                movieList.Add("NHWSI"); //east to north
+
+                String basePath = (@".\content\main\");
+
+                RoomExit exit1 = new RoomExit("south", "enlistedQtrs", "corpqrtrs", basePath, "south");
+                RoomExit exit2 = new RoomExit("west", "deck2area2", "NHE", basePath, "west");
+                exitList.Add(exit1);
+                exitList.Add(exit2);
+
+                Room enlistedQtrs = new Room(imageList, movieList, exitList, basePath, "Corridor - Corporate Quarters");
+
+                return enlistedQtrs;
+            }
+
+            if (roomName == "deck2area2") //Sickbay corridor
+            {
+                imageList.Add("NSI1"); //north
+                imageList.Add("NHW1"); //east
+                imageList.Add("NSO1"); //south
+                imageList.Add("NHE1"); //west
+
+                movieList.Add("NSIHW"); //north to east
+                movieList.Add("NHWSO"); //east to south
+                movieList.Add("NSOHE"); //south to west
+                movieList.Add("NHESI"); //west to north
+
+                movieList.Add("NSIHE"); //north to west
+                movieList.Add("NHESO"); //west to south
+                movieList.Add("NSOHW"); //south to east
+                movieList.Add("NHWSI"); //east to north
+
+                String basePath = (@".\content\main\");
+
+                RoomExit exit1 = new RoomExit("east", "deck2area1", "NHW", basePath, "east");
+                exitList.Add(exit1);
+
+                Room enlistedQtrs = new Room(imageList, movieList, exitList, basePath, "Corridor - Sickbay");
 
                 return enlistedQtrs;
             }

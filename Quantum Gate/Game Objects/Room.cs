@@ -23,7 +23,7 @@ namespace Quantum_Gate.Game_Objects
         private string southToEastMov;
         private string eastToNorthMov;
 
-        private string friendlyName;
+        public string friendlyName;
 
 
         public List<RoomExit> roomExits = new List<RoomExit>();

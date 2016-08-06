@@ -21,6 +21,7 @@ namespace Quantum_Gate
 
         private static Game_Objects.Player player;
         private static Game_Objects.RoomBuilder deck2 = new Game_Objects.RoomBuilder();
+        private string formTitle = "Quantum Gate v0.0.1";
 
         public void startGame()
         {
@@ -32,7 +33,8 @@ namespace Quantum_Gate
             forwardsHotSpot.BackColor = Color.Transparent;
             forwardsHotSpot.Visible = false;
             mainVidPlayer.Visible = false;
-            player = new Game_Objects.Player("west", deck2.buildRoom("drewQtrs"), 5, 1, 0);
+            player = new Game_Objects.Player("north", deck2.buildRoom("deck2area1"), 5, 1, 0);
+            this.Text = formTitle + " - " + player.currentRoom.friendlyName;
             refreshView();
         }
 
@@ -66,14 +68,14 @@ namespace Quantum_Gate
 
             mainVidPlayer.playlist.items.clear();
             mainVidPlayer.playlist.add(convertedURI, convertedURI, null);
-            mainVidPlayer.playlist.play();
+            mainVidPlayer.playlist.playItem(0);
         }
 
         private void refreshView()
         {
             System.Threading.Thread.Sleep(20); //stops the new image appearing breifly before the move movie plays
             imagePortal1.ImageLocation = player.getCurrentImagePath();
-            //this.Text = player.currentDirection;
+            this.Text = formTitle + " - " + player.currentRoom.friendlyName + " " + player.currentDirection;
         }
 
         private void mainVidPlayer_MediaPlayerPlaying(object sender, EventArgs e)
@@ -108,10 +110,26 @@ namespace Quantum_Gate
 
         private void forwardsHotSpot_Click(object sender, EventArgs e)
         {
-            forwardsHotSpot.Visible = false;
-            playUpMovie();
-            player.walk();
-            refreshView();
+                forwardsHotSpot.Visible = false;
+                playUpMovie();
+                player.walk();
+                refreshView();
+        }
+
+        private void mainVidPlayer_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            if (mainVidPlayer.playlist.isPlaying == true)
+            {
+                mainVidPlayer.playlist.stop();
+                mainVidPlayer.playlist.items.remove(0);
+                mainVidPlayer_MediaPlayerEndReached(null, null);
+            }
+            
         }
     }
 }

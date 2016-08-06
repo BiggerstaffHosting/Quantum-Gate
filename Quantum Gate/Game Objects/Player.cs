@@ -12,7 +12,7 @@ namespace Quantum_Gate.Game_Objects
         public Room currentRoom; //what room the player is in
         private int currentMood; //5 is nuteral, 1 is angry, 10 is happy
         private int chapterNumber; //what chapter is the player in? 1 though to 3
-        private int moveCount; //how many moves has this player made?
+        public int moveCount; //how many moves has this player made?
 
         public Player(String currentDirection, Room currentRoom, int currentMood, int chapterNumber, int moveCount)
         {
