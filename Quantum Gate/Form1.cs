@@ -28,12 +28,15 @@ namespace Quantum_Gate
             leftHotSpot.Parent = imagePortal1;
             rightHotSpot.Parent = imagePortal1;
             forwardsHotSpot.Parent = imagePortal1;
+            bottomHotSpot.Parent = imagePortal1;
             leftHotSpot.BackColor = Color.Transparent;
             rightHotSpot.BackColor = Color.Transparent;
             forwardsHotSpot.BackColor = Color.Transparent;
+            bottomHotSpot.BackColor = Color.Transparent;
             forwardsHotSpot.Visible = false;
+            bottomHotSpot.Visible = false;
             mainVidPlayer.Visible = false;
-            player = new Game_Objects.Player("north", deck2.buildRoom("deck2area1"), 5, 1, 0);
+            player = new Game_Objects.Player("south", deck2.buildRoom("drewQtrs"), 5, 1, 0);
             this.Text = formTitle + " - " + player.currentRoom.friendlyName;
             refreshView();
         }
@@ -74,8 +77,18 @@ namespace Quantum_Gate
         private void refreshView()
         {
             System.Threading.Thread.Sleep(20); //stops the new image appearing breifly before the move movie plays
+            forwardsHotSpot.Visible = player.doesCurrentViewHaveExit();
             imagePortal1.ImageLocation = player.getCurrentImagePath();
             this.Text = formTitle + " - " + player.currentRoom.friendlyName + " " + player.currentDirection;
+
+            //todo: handle lifts better!
+            if (player.isPlayerInLift == true)
+            {
+                forwardsHotSpot.Visible = false;
+                leftHotSpot.Visible = false;
+                rightHotSpot.Visible = false;
+                bottomHotSpot.Visible = true;
+            }
         }
 
         private void mainVidPlayer_MediaPlayerPlaying(object sender, EventArgs e)
@@ -88,7 +101,6 @@ namespace Quantum_Gate
         {
             mainVidPlayer.Visible = false;
             imagePortal1.Visible = true;
-            forwardsHotSpot.Visible = player.doesCurrentViewHaveExit();
         }
 
         private void rightHotSpot_Click(object sender, EventArgs e)
@@ -114,11 +126,6 @@ namespace Quantum_Gate
                 playUpMovie();
                 player.walk();
                 refreshView();
-        }
-
-        private void mainVidPlayer_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void Form1_Click(object sender, EventArgs e)

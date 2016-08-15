@@ -10,9 +10,11 @@ namespace Quantum_Gate.Game_Objects
     { 
         public string currentDirection; //the direction the player is currently facing (should have made this an int)
         public Room currentRoom; //what room the player is in
+        public Lift currentLift; //what lift the player is in
         private int currentMood; //5 is nuteral, 1 is angry, 10 is happy
         private int chapterNumber; //what chapter is the player in? 1 though to 3
         public int moveCount; //how many moves has this player made?
+        public bool isPlayerInLift = false;
 
         public Player(String currentDirection, Room currentRoom, int currentMood, int chapterNumber, int moveCount)
         {
@@ -25,7 +27,14 @@ namespace Quantum_Gate.Game_Objects
 
         public String getCurrentImagePath()
         {
-            return currentRoom.getCurrentImage(currentDirection);
+            if (isPlayerInLift == true)
+            {
+                return currentLift.getCurrentImage();
+            }
+            else
+            {
+                return currentRoom.getCurrentImage(currentDirection);
+            }
         }
 
         public String getLeftMoveMovie()
@@ -55,9 +64,18 @@ namespace Quantum_Gate.Game_Objects
             {
                 if(roomExit.exitDirection == currentDirection)
                 {
-                    currentDirection = roomExit.directionOverride;
-                    Game_Objects.RoomBuilder deck2 = new Game_Objects.RoomBuilder();
-                    currentRoom = deck2.buildRoom(roomExit.nextRoom);
+                    if (roomExit.nextRoomIsLift == true)
+                    {
+                        isPlayerInLift = true;
+                        Game_Objects.RoomBuilder deck2 = new Game_Objects.RoomBuilder();
+                        currentLift = deck2.buildLift(roomExit.nextRoom);
+                    }
+                    else
+                    {
+                        currentDirection = roomExit.directionOverride;
+                        Game_Objects.RoomBuilder deck2 = new Game_Objects.RoomBuilder();
+                        currentRoom = deck2.buildRoom(roomExit.nextRoom);
+                    }
                 }
             }
         }

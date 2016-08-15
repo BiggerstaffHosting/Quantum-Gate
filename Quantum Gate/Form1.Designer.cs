@@ -34,11 +34,13 @@
             this.forwardsHotSpot = new System.Windows.Forms.PictureBox();
             this.rightHotSpot = new System.Windows.Forms.PictureBox();
             this.leftHotSpot = new System.Windows.Forms.PictureBox();
+            this.bottomHotSpot = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imagePortal1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainVidPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.forwardsHotSpot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightHotSpot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leftHotSpot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bottomHotSpot)).BeginInit();
             this.SuspendLayout();
             // 
             // imagePortal1
@@ -66,7 +68,6 @@
             this.mainVidPlayer.TabIndex = 3;
             this.mainVidPlayer.MediaPlayerPlaying += new System.EventHandler(this.mainVidPlayer_MediaPlayerPlaying);
             this.mainVidPlayer.MediaPlayerEndReached += new System.EventHandler(this.mainVidPlayer_MediaPlayerEndReached);
-            this.mainVidPlayer.Enter += new System.EventHandler(this.mainVidPlayer_Enter);
             // 
             // forwardsHotSpot
             // 
@@ -108,12 +109,25 @@
             this.leftHotSpot.TabStop = false;
             this.leftHotSpot.Click += new System.EventHandler(this.leftHotSpot_Click);
             // 
+            // bottomHotSpot
+            // 
+            this.bottomHotSpot.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bottomHotSpot.BackColor = System.Drawing.Color.Lime;
+            this.bottomHotSpot.Cursor = System.Windows.Forms.Cursors.PanSouth;
+            this.bottomHotSpot.Location = new System.Drawing.Point(168, 326);
+            this.bottomHotSpot.Name = "bottomHotSpot";
+            this.bottomHotSpot.Size = new System.Drawing.Size(848, 103);
+            this.bottomHotSpot.TabIndex = 8;
+            this.bottomHotSpot.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1184, 441);
+            this.Controls.Add(this.bottomHotSpot);
             this.Controls.Add(this.leftHotSpot);
             this.Controls.Add(this.rightHotSpot);
             this.Controls.Add(this.forwardsHotSpot);
@@ -129,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.forwardsHotSpot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightHotSpot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leftHotSpot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bottomHotSpot)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,6 +155,7 @@
         private System.Windows.Forms.PictureBox forwardsHotSpot;
         private System.Windows.Forms.PictureBox rightHotSpot;
         private System.Windows.Forms.PictureBox leftHotSpot;
+        private System.Windows.Forms.PictureBox bottomHotSpot;
     }
 }
 

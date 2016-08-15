@@ -34,7 +34,7 @@ namespace Quantum_Gate.Game_Objects
 
                 String basePath = (@".\content\drewqtrs\");
 
-                RoomExit northExit = new RoomExit("north", "enlistedQtrs", "N3C_2C", basePath, "north");
+                RoomExit northExit = new RoomExit("north", "enlistedQtrs", "N3C_2C", basePath, "north", false);
                 exitList.Add(northExit);
 
                 Room drewQtrs = new Room(imageList, movieList, exitList, basePath, "Drew's Quarters");
@@ -61,8 +61,8 @@ namespace Quantum_Gate.Game_Objects
 
                 String basePath = (@".\content\drewqtrs\");
 
-                RoomExit exit1 = new RoomExit("east", "drewQtrs", "N2B_3A", basePath, "south");
-                RoomExit exit2 = new RoomExit("north", "deck2area1", "N2C_1", basePath, "north");
+                RoomExit exit1 = new RoomExit("east", "drewQtrs", "N2B_3A", basePath, "south", false);
+                RoomExit exit2 = new RoomExit("north", "deck2area1", "N2C_1", basePath, "north", false);
                 exitList.Add(exit1);
                 exitList.Add(exit2);
 
@@ -93,20 +93,22 @@ namespace Quantum_Gate.Game_Objects
 
                 if (areaNumber == 1)
                 {
-                    RoomExit exit1 = new RoomExit("south", "enlistedQtrs", "corpqrtrs", basePath, "south");
-                    RoomExit exit2 = new RoomExit("east", "deck2area5", "NHW", basePath, "east");
-                    RoomExit exit3 = new RoomExit("west", "deck2area2", "NHE", basePath, "west");
+                    RoomExit exit1 = new RoomExit("south", "enlistedQtrs", "corpqrtrs", basePath, "south", false);
+                    RoomExit exit2 = new RoomExit("east", "deck2area5", "NHW", basePath, "east", false );
+                    RoomExit exit3 = new RoomExit("west", "deck2area2", "NHE", basePath, "west", false);
+                    RoomExit exit4 = new RoomExit("north", "lift1deck2", "deck2lift1", basePath, "north", true);
                     exitList.Add(exit1);
                     exitList.Add(exit2);
                     exitList.Add(exit3);
+                    exitList.Add(exit4);
                     Room corridor = new Room(imageList, movieList, exitList, basePath, "Corridor - Corporate Quarters");
                     return corridor;
                 }
                 else if(areaNumber == 2)
                 {
                     //RoomExit exit1 = new RoomExit("south", "enlistedQtrs", "corpqrtrs", basePath, "south");
-                    RoomExit exit2 = new RoomExit("west", "deck2area3", "NHE", basePath, "west");
-                    RoomExit exit3 = new RoomExit("east", "deck2area1", "NHW", basePath, "east");
+                    RoomExit exit2 = new RoomExit("west", "deck2area3", "NHE", basePath, "west", false);
+                    RoomExit exit3 = new RoomExit("east", "deck2area1", "NHW", basePath, "east", false);
                     //exitList.Add(exit1);
                     exitList.Add(exit2);
                     exitList.Add(exit3);
@@ -116,8 +118,8 @@ namespace Quantum_Gate.Game_Objects
                 else if (areaNumber == 3)
                 {
                     //RoomExit exit1 = new RoomExit("south", "enlistedQtrs", "corpqrtrs", basePath, "south");
-                    RoomExit exit2 = new RoomExit("west", "deck2area4", "NHE", basePath, "west");
-                    RoomExit exit3 = new RoomExit("east", "deck2area2", "NHW", basePath, "east");
+                    RoomExit exit2 = new RoomExit("west", "deck2area4", "NHE", basePath, "west", false);
+                    RoomExit exit3 = new RoomExit("east", "deck2area2", "NHW", basePath, "east", false);
                     //exitList.Add(exit1);
                     exitList.Add(exit2);
                     exitList.Add(exit3);
@@ -127,8 +129,8 @@ namespace Quantum_Gate.Game_Objects
                 else if (areaNumber == 4)
                 {
                    // RoomExit exit1 = new RoomExit("south", "enlistedQtrs", "corpqrtrs", basePath, "south");
-                    RoomExit exit2 = new RoomExit("west", "deck2area5", "NHE", basePath, "west");
-                    RoomExit exit3 = new RoomExit("east", "deck2area3", "NHW", basePath, "east");
+                    RoomExit exit2 = new RoomExit("west", "deck2area5", "NHE", basePath, "west", false);
+                    RoomExit exit3 = new RoomExit("east", "deck2area3", "NHW", basePath, "east", false);
                     //exitList.Add(exit1);
                     exitList.Add(exit2);
                     exitList.Add(exit3);
@@ -138,19 +140,26 @@ namespace Quantum_Gate.Game_Objects
                 else if (areaNumber == 5)
                 {
                     //RoomExit exit1 = new RoomExit("south", "enlistedQtrs", "corpqrtrs", basePath, "south");
-                    RoomExit exit2 = new RoomExit("west", "deck2area1", "NHE", basePath, "west");
-                    RoomExit exit3 = new RoomExit("east", "deck2area4", "NHW", basePath, "east");
+                    RoomExit exit2 = new RoomExit("west", "deck2area1", "NHE", basePath, "west", false);
+                    RoomExit exit3 = new RoomExit("east", "deck2area4", "NHW", basePath, "east", false);
                     //exitList.Add(exit1);
                     exitList.Add(exit3);
                     exitList.Add(exit2);
                     Room corridor = new Room(imageList, movieList, exitList, basePath, "Corridor - Science");
                     return corridor;
                 }
-
-
             }
 
             return null;
+        }
+
+        public Lift buildLift(string liftName)
+        {
+            int deckNumber = Convert.ToInt16(liftName.Substring(9, 1));
+            int liftNumber = Convert.ToInt16(liftName.Substring(4, 1));
+
+            Lift newLift = new Lift(deckNumber, liftNumber);
+            return newLift;
         }
     }
 }

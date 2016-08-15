@@ -12,14 +12,16 @@ namespace Quantum_Gate.Game_Objects
         public String nextRoom; //where does this room lead?
         public String exitMovie;
         public String directionOverride; //override the player's current direction (if the exit goes round a corner)
+        public bool nextRoomIsLift;
 
 
-        public RoomExit(string exitDirection, String nextRoom, string exitMovie, string baseDir, String directionOverride)
+        public RoomExit(string exitDirection, String nextRoom, string exitMovie, string baseDir, String directionOverride, bool nextRoomIsLift)
         {
             this.exitDirection = exitDirection;
             this.nextRoom = nextRoom;
             this.exitMovie = baseDir + "/" + exitMovie + ".mov";
             this.directionOverride = directionOverride;
+            this.nextRoomIsLift = nextRoomIsLift;
         }
     }
 }
